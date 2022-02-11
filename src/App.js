@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
-import Contacts from './contacts.json';
+import contacts from './contacts.json';
 import FirstCelebs from './Components/FirstCelebs';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      contacts: Contacts.filter((celeb, index) => index <= 4),
-      allContacts: Contacts,
+      contacts: contacts.filter((celeb, index) => index <= 4),
+      allContacts: contacts,
     };
     this.addRandomCeleb = this.addRandomCeleb.bind(this);
     this.sortByName = this.sortByName.bind(this);
@@ -70,9 +70,8 @@ class App extends Component {
   render(){
     return (
         <div className="App">
-          <header className="App-header">
-          </header>
           <p className="App-intro"></p>
+          <h1>IronContact</h1>
           <section className="button-section">
             <button type="submit" className="button is-black is-rounded buttons-adjust" onClick={this.addRandomCelebs}>Add Random Celebrity</button>
             <button type="submit" className="button is-dark is-rounded buttons-adjust" onClick={this.sortByName}>Sort By Name</button>
